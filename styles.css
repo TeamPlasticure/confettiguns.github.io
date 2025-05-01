@@ -15,7 +15,7 @@ html, body {
 }
 
 .center-text {
-  position: fixed; /* This is the magic! */
+  position: fixed; /* This keeps it in the center of the viewport always */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
