@@ -14,17 +14,15 @@ html, body {
   z-index: 0;
 }
 
-.centered-wrapper {
-  width: 100%;
+/* This centers the content vertically and horizontally on the page */
+.page-center {
   display: flex;
+  align-items: center;
   justify-content: center;
-  /* Add vertical padding to center on initial load if you want */
-  padding-top: 20vh;
-  padding-bottom: 20vh;
+  height: 100vh; /* Full viewport height */
 }
 
 .center-text {
-  /* No position, top, left, or transform! */
   font-family: "Times New Roman", Times, serif;
   font-size: 4rem;
   color: #fff;
