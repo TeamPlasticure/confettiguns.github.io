@@ -20,7 +20,7 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Archivo Black', Impact, 'Arial Black', Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 4rem;
   color: #fff;
   letter-spacing: 0.1em;
