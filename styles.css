@@ -15,7 +15,7 @@ html, body {
 }
 
 .center-text {
-  position: fixed;
+  position: fixed; /* This is the magic! */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
