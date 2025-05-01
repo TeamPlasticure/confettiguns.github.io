@@ -7,15 +7,26 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 
-// Smoother, centered, full-screen confetti
+// Helper to get the center of the element relative to the viewport
+function getElementViewportCenter(elem) {
+  const rect = elem.getBoundingClientRect();
+  return {
+    x: (rect.left + rect.right) / 2 / window.innerWidth,
+    y: (rect.top + rect.bottom) / 2 / window.innerHeight
+  };
+}
+
+// Confetti bursts from the center of the text, wherever it is in the viewport
 function smoothCenteredConfetti() {
   const myConfetti = confetti.create(canvas, { resize: true, useWorker: true });
+  const textElem = document.getElementById('main-title');
+  const center = getElementViewportCenter(textElem);
 
   // Central big burst
   myConfetti({
     particleCount: 300,
     spread: 360,
-    origin: { x: 0.5, y: 0.5 },
+    origin: { x: center.x, y: center.y },
     startVelocity: 60,
     scalar: 1.2,
     gravity: 0.8,
@@ -27,10 +38,11 @@ function smoothCenteredConfetti() {
   // Follow-up smaller bursts for smoothness
   let count = 0;
   const interval = setInterval(() => {
+    const centerNow = getElementViewportCenter(textElem);
     myConfetti({
       particleCount: 60,
       spread: 160,
-      origin: { x: 0.5, y: 0.5 },
+      origin: { x: centerNow.x, y: centerNow.y },
       startVelocity: 40,
       scalar: 1,
       gravity: 0.9,
