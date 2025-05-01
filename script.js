@@ -55,4 +55,19 @@ function smoothCenteredConfetti() {
   }, 180);
 }
 
-window.onload = smoothCenteredConfetti;
+// Scroll to the text and then fire confetti
+window.onload = function() {
+  const textElem = document.getElementById('main-title');
+  if (textElem) {
+    const rect = textElem.getBoundingClientRect();
+    const elemTop = rect.top + window.pageYOffset;
+    const elemHeight = rect.height;
+    const viewportHeight = window.innerHeight;
+    // Scroll so the element is vertically centered
+    window.scrollTo({
+      top: elemTop - (viewportHeight / 2) + (elemHeight / 2),
+      behavior: 'auto'
+    });
+  }
+  smoothCenteredConfetti();
+};
