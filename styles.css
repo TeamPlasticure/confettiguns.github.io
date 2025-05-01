@@ -16,7 +16,7 @@ html, body {
 }
 
 .center-text {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -28,6 +28,12 @@ html, body {
   z-index: 2;
   user-select: none;
   animation: pop-in 0.7s cubic-bezier(.34,1.56,.64,1);
+  transition: transform 0.2s cubic-bezier(.34,1.56,.64,1), text-shadow 0.2s;
+}
+.center-text:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+  text-shadow: 0 4px 40px #000, 0 0 80px #3498db;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
