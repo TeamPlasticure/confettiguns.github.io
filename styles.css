@@ -14,14 +14,6 @@ html, body {
   z-index: 0;
 }
 
-/* This centers the content vertically and horizontally on the page */
-.page-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Full viewport height */
-}
-
 .center-text {
   font-family: "Times New Roman", Times, serif;
   font-size: 4rem;
@@ -33,6 +25,9 @@ html, body {
   animation: pop-in 0.7s cubic-bezier(.34,1.56,.64,1);
   transition: transform 0.2s cubic-bezier(.34,1.56,.64,1), text-shadow 0.2s;
   text-align: center;
+  margin: 40vh auto 0 auto; /* Centers vertically in content flow */
+  width: 100%;
+  max-width: 100vw;
 }
 .center-text:hover {
   transform: scale(1.12);
